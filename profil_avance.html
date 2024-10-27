@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mon profil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#first">Accueil</a></li>
+                <li><a href="#second">À propos</a></li>
+                <li><a href="#third">Services</a></li>
+                <li><a href="#fourth">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <h1 class="title">ALAOUI DRAI ZINEB</h1>
+
+    <section id="first">
+        <h2 class="title2">À propos de moi</h2>
+        <div class="about-container">
+            <img src="Me.jpg" alt="Mon image" id="img">
+            <div class="about-text">
+                <p>Mon nom est Zineb Alaoui Drai, je suis étudiante en troisième année de cycle ingénieur en informatique et j'ai 20 ans. J'ai obtenu mon baccalauréat en sciences mathématiques A avec mention très bien, ce qui m'a permis de poursuivre mes études dans un domaine qui me passionne. Mon parcours académique m'a permis d'acquérir des connaissances solides en informatique, en particulier dans les domaines de la sécurité et des bases de données.</p>
+                <p>Je souhaite me spécialiser en cybersécurité, un secteur en pleine expansion qui me fascine. J'ai déjà acquis des compétences dans l'utilisation des outils de sécurité informatique, ce qui m'a permis de comprendre les enjeux et les défis liés à la protection des données. Mon intérêt pour ce domaine est profond, et je suis déterminée à contribuer à la sécurité des systèmes d'information et à relever les défis complexes de la cybersécurité.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="second">
+        <h2 class="title2">Hobbies et objectifs</h2>
+        <div class="liste">
+            <h3>Mes hobbies</h3>
+            <ul>
+                <li>Gaming</li>
+                <li>Sécurité informatique</li>
+                <li>Danse et musique</li>
+                <li>Cinéma</li>
+                <li>Technologie</li>
+            </ul>
+        </div>
+        <div class="liste">
+            <h3>Mes objectifs</h3>
+            <ol type="I">
+                <li>Maitriser les concepts de cybersécurité</li>
+                <li>Trouver un bon stage</li>
+                <li>Valider mon année avec mention</li>
+                <li>Enrichir mes compétences</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="third">
+        <h2 class="title2">Tableau d'amis</h2>
+        <div class="tableau">
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Âge</th>
+                        <th>Ville</th>
+                        <th>Lien vers le profil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maha</td>
+                        <td>21 ans</td>
+                        <td>Casablanca</td>
+                        <td><a href="#">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sara</td>
+                        <td>20 ans</td>
+                        <td>Casablanca</td>
+                        <td><a href="#">Lien</a></td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>20 ans</td>
+                        <td>Casablanca</td>
+                        <td><a href="#">Lien</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="fourth">
+        <form>
+            <h2 class="title2">Formulaire :</h2>
+            <label for="nom">Nom :</label><br>
+            <input type="text" id="nom" name="Nom" required placeholder="Nom d'utilisateur"><br>
+            <div id="nameFeedback" style="color: red;"></div> 
+            <label for="email">Email :</label><br>
+            <input type="email" id="email" name="Email" required placeholder="Email d'utilisateur"><br>
+            <div id="nameFeedback" style="color: red;"></div> 
+            <label for="message">Message :</label><br>
+            <textarea id="message" name="Message" cols="30" rows="15" placeholder="Votre message ici"></textarea><br>
+            <button type="submit" class="button">Soumettre</button>
+        </form>
+    </section>
+  
+    <script>
+        document.getElementById('fourth').onsubmit = function(event) {
+            const nameInput = document.getElementById('nom');
+            const feedback = document.getElementById('nameFeedback');
+    
+            if (nameInput.value.trim() === '') {
+                feedback.textContent = 'Le champ nom ne doit pas être vide.';
+                event.preventDefault(); 
+            } else {
+                feedback.textContent = ''; 
+            }
+            
+        };
+        document.getElementById('fourth').onsubmit = function(event) {
+        const emailInput = document.getElementById('email');
+        const feedback = document.getElementById('emailFeedback');
+
+        
+        const emailPattern = /.+@.+\..+/; 
+
+        if (!emailPattern.test(emailInput.value)) {
+            feedback.textContent = 'Veuillez entrer un email valide.';
+            event.preventDefault(); 
+        } else {
+            feedback.textContent = ''; 
+        }
+    };
+
+    document.getElementById('myForm').onsubmit = function(event) {
+        event.preventDefault(); 
+        alert('Formulaire soumis !'); 
+    };
+    </script>
+</body>
+
+</html>
